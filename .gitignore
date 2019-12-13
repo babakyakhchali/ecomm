@@ -1,0 +1,10 @@
+node_modules
+logs
+dist
+.env.*
+yarn-error.log
+storage
+uploads
+.well-known
+tmp
+data

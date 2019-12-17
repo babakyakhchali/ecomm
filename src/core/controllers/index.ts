@@ -10,7 +10,7 @@ export const fileUploadOptions = {
         destination: (_req: any, _file: any, cb: any) => {
             const dir = join(ROOT_DIR, '/uploads/tmp', uuid.v4());
             ensureDirSync(dir);
-            cb(null,  dir);
+            cb(null, dir);
         },
         filename: (_req: any, file: any, cb: any) => {
             cb(null, file.originalname);

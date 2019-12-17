@@ -6,6 +6,7 @@ import { useExpressServer, ExpressErrorMiddlewareInterface, Middleware, ExpressM
 import * as express from "express";
 import { ROOT_DIR } from "./core";
 import { join } from "path";
+import { authService } from './auth/services/auth';
 
 
 export async function testAccounts(connection: Connection) {
@@ -65,7 +66,8 @@ function startApi() {
             __dirname + "/auth/controllers/*js",
             __dirname + "/product/controllers/*js",
         ],
-        defaultErrorHandler: false
+        defaultErrorHandler: false,
+        authorizationChecker:authService.authorizationChecker.bind(authService)
     })
     app.listen(3000);
 }

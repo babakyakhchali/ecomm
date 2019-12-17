@@ -14,6 +14,5 @@ export class Account extends BaseModelWithTs{
     password!: string;
 
     @Column({ type: "enum", enum: AccountType })
-    atype!: AccountType;    
-
+    atype!: AccountType;
 }
